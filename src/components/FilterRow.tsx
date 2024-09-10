@@ -1,7 +1,9 @@
+import { CATEGORIES } from '@/constants'
+
 export default function FilterRow() {
 	return (
 		<tr>
-			{new Array(4).fill('').map(() => (
+			{CATEGORIES.map(() => (
 				<td>
 					<input type="text" />
 				</td>
