@@ -1,8 +1,8 @@
-import { AppDispatch, RootState } from '../store'
+import { AppDispatch, RootState } from '@/store'
 import { useDispatch, useSelector } from 'react-redux'
 
-import fetchAllUsers from '../api/user'
-import { setUsers } from '../slices/userSlice'
+import fetchAllUsers from '@/api/user'
+import { setUsers } from '@/slices/userSlice'
 import { useCallback } from 'react'
 
 export const useUsers = () => {

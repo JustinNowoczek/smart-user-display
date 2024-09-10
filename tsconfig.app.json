@@ -20,11 +20,12 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
 
-		"baseUrl": "./src", // Base directory for resolving non-relative module names
+		"baseUrl": "./src",
 		"paths": {
 			"@hooks/*": ["hooks/*"],
 			"@components/*": ["components/*"],
-			"@custom-types/*": ["types/*"]
+			"@custom-types/*": ["types/*"],
+			"@/*": ["*"]
 		}
 	},
 	"include": ["src"]

@@ -5,7 +5,7 @@ export default async function fetchAllUsers() {
 		const response = await fetch('https://jsonplaceholder.typicode.com/users')
 
 		if (!response.ok) {
-			throw new Error('Network response was not ok')
+			throw new Error('network response failed')
 		}
 
 		const users = (await response.json()) as UserType[]
@@ -18,7 +18,7 @@ export default async function fetchAllUsers() {
 			username,
 		}))
 	} catch {
-		console.error('Fetching users failed')
+		console.error('fetching users failed')
 		return []
 	}
 }

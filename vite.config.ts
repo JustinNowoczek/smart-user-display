@@ -10,6 +10,7 @@ export default defineConfig({
 			'@hooks': resolve(__dirname, 'src/hooks'),
 			'@components': resolve(__dirname, 'src/components'),
 			'@custom-types': resolve(__dirname, 'src/types'),
+			'@': resolve(__dirname, 'src'),
 		},
 	},
 })
