@@ -12,3 +12,4 @@ Then, I split the table, so that each row displaying aa use had its own componen
 
 Instead of displaying the list of users, I made another array in the store, this one is filtered when any value in the filters object (also added) changes, completing the functionality of the app. I also decided to derive all categories form one array, so that changing the list of headers is done in one place, and derived from there.
 
+Added some basic styles, to show which row is being hovered, and to split the different sections of the table, as well as marking which section of the field matches its corresponding filter.

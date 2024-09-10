@@ -7,36 +7,27 @@
 	height: fit-content;
 	overflow: scroll;
 
-	thead,
-	tbody {
-		width: 100%;
-	}
-
 	thead {
 		border-bottom: 2px solid var(--main);
 
 		tr {
 			height: 32px;
-		}
-	}
 
-	.filterRow {
-		input {
-			all: unset;
-			border: 2px solid var(--base);
-			border-radius: 10px;
-			height: 32px;
-			color: var(--main);
+			&.filterRow {
+				input {
+					all: unset;
+					border: 2px solid var(--base);
+					border-radius: 10px;
+					height: 32px;
+					color: var(--main);
 
-			&::placeholder {
-				color: var(--subtext);
-			}
+					&:hover {
+						color: var(--text);
 
-			&:hover {
-				color: var(--text);
-
-				&::placeholder {
-					color: var(--text);
+						&::placeholder {
+							color: var(--text);
+						}
+					}
 				}
 			}
 		}
@@ -61,12 +52,6 @@
 		}
 	}
 
-	.noResults {
-		padding: 50px;
-		width: 100%;
-		text-align: center;
-	}
-
 	td {
 		text-wrap: nowrap;
 		padding: 10px;
@@ -76,6 +61,12 @@
 		span {
 			background-color: var(--main);
 		}
+	}
+
+	.noResults {
+		padding: 50px;
+		width: 100%;
+		text-align: center;
 	}
 }
 
