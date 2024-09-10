@@ -22,9 +22,9 @@
 
 		"baseUrl": "./src", // Base directory for resolving non-relative module names
 		"paths": {
-			"@stores/*": ["stores/*"],
+			"@slices/*": ["slices/*"],
 			"@components/*": ["components/*"],
-			"@types/*": ["types/*"]
+			"@custom-types/*": ["types/*"]
 		}
 	},
 	"include": ["src"]

@@ -7,9 +7,9 @@ export default defineConfig({
 	plugins: [react()],
 	resolve: {
 		alias: {
-			'@stores': resolve(__dirname, 'src/stores'),
+			'@slices': resolve(__dirname, 'src/slices'),
 			'@components': resolve(__dirname, 'src/components'),
-			'@types': resolve(__dirname, 'src/types'),
+			'@custom-types': resolve(__dirname, 'src/types'),
 		},
 	},
 })
