@@ -1,4 +1,4 @@
-import { UserType } from '../types/userTypes'
+import { UserType } from '@custom-types/userTypes'
 
 export default async function fetchAllUsers() {
 	try {
