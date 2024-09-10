@@ -4,8 +4,7 @@ import UserRow from './UserRow'
 import { useUsers } from '@hooks/useUsers'
 
 export default function UserTable() {
-	const { users, categoryFilters } = useUsers()
-	console.log(categoryFilters)
+	const { displayUsers } = useUsers()
 
 	return (
 		<table>
@@ -18,7 +17,7 @@ export default function UserTable() {
 				</tr>
 			</thead>
 			<tbody>
-				{users.map((user) => (
+				{displayUsers.map((user) => (
 					<UserRow key={user.id} {...user} />
 				))}
 			</tbody>

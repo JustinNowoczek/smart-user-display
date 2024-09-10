@@ -9,3 +9,6 @@ Since I was already able to pull the data, I created the redux store, adding a c
 I could now create a basic table in a separate component, that would display the list of users in a table, this could be added anywhere in the app, since it pulled data directly from the store. I decided to focus only functionality, before moving onto styling later.
 
 Then, I split the table, so that each row displaying aa use had its own component, and created another to be the row of filters. I included the filters inside the table, so that aligning the columns would be easier later on.
+
+Instead of displaying the list of users, I made another array in the store, this one is filtered when any value in the filters object (also added) changes, completing the functionality of the app. I also decided to derive all categories form one array, so that changing the list of headers is done in one place, and derived from there.
+

@@ -23,12 +23,35 @@ const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
-		setUsers(state, action: PayloadAction<UserType[]>) {
-			state.users = action.payload
+		setUsers(state, { payload }: PayloadAction<UserType[]>) {
+			state.users = payload
+			state.displayUsers = payload
+		},
+		setCategoryFilter(
+			state,
+			{ payload }: PayloadAction<{ category: keyof UserState['categoryFilters']; newValue: string }>
+		) {
+			if (state.categoryFilters[payload.category] !== payload.newValue) {
+				state.categoryFilters[payload.category] = payload.newValue
+
+				state.displayUsers = state.users.filter((user) =>
+					Object.entries(user).every(
+						([category, value]) =>
+							typeof value === 'number' ||
+							value
+								.toLowerCase()
+								.includes(
+									state.categoryFilters[
+										category as keyof UserState['categoryFilters']
+									].toLowerCase()
+								)
+					)
+				)
+			}
 		},
 	},
 })
 
-export const { setUsers } = userSlice.actions
+export const { setUsers, setCategoryFilter } = userSlice.actions
 export default userSlice.reducer
 
