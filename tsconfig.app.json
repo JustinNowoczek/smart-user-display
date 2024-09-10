@@ -22,7 +22,7 @@
 
 		"baseUrl": "./src", // Base directory for resolving non-relative module names
 		"paths": {
-			"@slices/*": ["slices/*"],
+			"@hooks/*": ["hooks/*"],
 			"@components/*": ["components/*"],
 			"@custom-types/*": ["types/*"]
 		}
