@@ -6,3 +6,5 @@ At first I used the json placeholder guide to understand the api I would be fetc
 
 Since I was already able to pull the data, I created the redux store, adding a custom hook that gave access to the data, and made sure the users were fetched on the app component mounting.
 
+I could now create a basic table in a separate component, that would display the list of users in a table, this could be added anywhere in the app, since it pulled data directly from the store. I decided to focus only functionality, before moving onto styling later.
+
