@@ -7,7 +7,15 @@ import UserRow from './components/UserRow/UserRow'
 import { useUsers } from '@hooks/useUsers'
 
 export default function UserTable() {
-	const { displayUsers, dispatchNewCategoryFilter } = useUsers()
+	const { displayUsers, dispatchNewCategoryFilter, status } = useUsers()
+
+	if (status === 'loading') {
+		return <h1>Loading...</h1>
+	}
+
+	if (status === 'failed') {
+		return <h1>Failed to fetch users. Try again later</h1>
+	}
 
 	return (
 		<table className="userTable">

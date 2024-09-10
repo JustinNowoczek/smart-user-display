@@ -6,11 +6,11 @@ import { useEffect } from 'react'
 import { useUsers } from '@hooks/useUsers'
 
 function App() {
-	const { initializeUsers } = useUsers()
+	const { dispatchInitializeUsers } = useUsers()
 
 	useEffect(() => {
-		initializeUsers()
-	}, [initializeUsers])
+		dispatchInitializeUsers()
+	}, [dispatchInitializeUsers])
 
 	return <UserTable />
 }

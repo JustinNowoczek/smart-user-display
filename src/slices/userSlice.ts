@@ -1,7 +1,8 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import { CATEGORIES } from '@/constants'
 import { UserType } from '@custom-types/userTypes'
+import fetchAllUsers from '@/api/user'
 
 interface UserState {
 	users: UserType[]
@@ -9,6 +10,7 @@ interface UserState {
 	categoryFilters: {
 		[key in (typeof CATEGORIES)[number]]: string
 	}
+	status: 'loading' | 'succeeded' | 'failed'
 }
 
 const initialState: UserState = {
@@ -17,16 +19,17 @@ const initialState: UserState = {
 	categoryFilters: Object.fromEntries(
 		CATEGORIES.map((category) => [category, ''])
 	) as UserState['categoryFilters'],
+	status: 'loading',
 }
+
+export const initializeUsers = createAsyncThunk('user/initializeUsers', async () => {
+	return await fetchAllUsers()
+})
 
 const userSlice = createSlice({
 	name: 'user',
 	initialState,
 	reducers: {
-		setUsers(state, { payload }: PayloadAction<UserType[]>) {
-			state.users = payload
-			state.displayUsers = payload
-		},
 		setCategoryFilter(
 			state,
 			{ payload }: PayloadAction<{ category: keyof UserState['categoryFilters']; newValue: string }>
@@ -50,8 +53,22 @@ const userSlice = createSlice({
 			}
 		},
 	},
+	extraReducers: (builder) => {
+		builder
+			.addCase(initializeUsers.pending, (state) => {
+				state.status = 'loading'
+			})
+			.addCase(initializeUsers.fulfilled, (state, action: PayloadAction<UserType[]>) => {
+				state.status = 'succeeded'
+				state.users = action.payload
+				state.displayUsers = action.payload
+			})
+			.addCase(initializeUsers.rejected, (state) => {
+				state.status = 'failed'
+			})
+	},
 })
 
-export const { setUsers, setCategoryFilter } = userSlice.actions
+export const { setCategoryFilter } = userSlice.actions
 export default userSlice.reducer
 

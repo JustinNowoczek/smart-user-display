@@ -1,17 +1,16 @@
 import { AppDispatch, RootState } from '@/store'
-import { setCategoryFilter, setUsers } from '@/slices/userSlice'
+import { initializeUsers, setCategoryFilter } from '@/slices/userSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { CATEGORIES } from '@/constants'
-import fetchAllUsers from '@/api/user'
 import { useCallback } from 'react'
 
 export const useUsers = () => {
 	const dispatch: AppDispatch = useDispatch()
 	const usersStore = useSelector((state: RootState) => state.user)
 
-	const initializeUsers = useCallback(async () => {
-		dispatch(setUsers(await fetchAllUsers()))
+	const dispatchInitializeUsers = useCallback(() => {
+		dispatch(initializeUsers())
 	}, [dispatch])
 
 	const dispatchNewCategoryFilter = useCallback(
@@ -24,7 +23,7 @@ export const useUsers = () => {
 	return {
 		...usersStore,
 		dispatchNewCategoryFilter,
-		initializeUsers,
+		dispatchInitializeUsers,
 	}
 }
 
