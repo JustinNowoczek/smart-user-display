@@ -3,8 +3,8 @@ import { CATEGORIES } from '@/constants'
 export default function FilterRow() {
 	return (
 		<tr>
-			{CATEGORIES.map(() => (
-				<td>
+			{CATEGORIES.map((category) => (
+				<td key={category}>
 					<input type="text" />
 				</td>
 			))}

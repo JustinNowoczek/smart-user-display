@@ -11,8 +11,8 @@ export default function UserTable() {
 			<thead>
 				<FilterRow />
 				<tr>
-					{CATEGORIES.map((header) => (
-						<th key={header}>{header}</th>
+					{CATEGORIES.map((category) => (
+						<th key={category}>{category}</th>
 					))}
 				</tr>
 			</thead>
