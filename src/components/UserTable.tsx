@@ -1,3 +1,5 @@
+import FilterRow from './FilterRow'
+import UserRow from './UserRow'
 import { useUsers } from '@hooks/useUsers'
 
 export default function UserTable() {
@@ -8,6 +10,7 @@ export default function UserTable() {
 	return (
 		<table>
 			<thead>
+				<FilterRow />
 				<tr>
 					{headers.map((header) => (
 						<th key={header}>{header}</th>
@@ -15,13 +18,8 @@ export default function UserTable() {
 				</tr>
 			</thead>
 			<tbody>
-				{users.map(({ email, id, name, phone, username }) => (
-					<tr key={id}>
-						<td>{name}</td>
-						<td>{username}</td>
-						<td>{email}</td>
-						<td>{phone}</td>
-					</tr>
+				{users.map((user) => (
+					<UserRow key={user.id} {...user} />
 				))}
 			</tbody>
 		</table>

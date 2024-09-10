@@ -1,4 +1,4 @@
-Steps taken to create/reasoning
+Steps taken to complete task:
 
 Since the task requires using react, I have initialized a new react project with vite, already integrating typescript.
 
@@ -8,3 +8,4 @@ Since I was already able to pull the data, I created the redux store, adding a c
 
 I could now create a basic table in a separate component, that would display the list of users in a table, this could be added anywhere in the app, since it pulled data directly from the store. I decided to focus only functionality, before moving onto styling later.
 
+Then, I split the table, so that each row displaying aa use had its own component, and created another to be the row of filters. I included the filters inside the table, so that aligning the columns would be easier later on.
