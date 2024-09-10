@@ -1,17 +1,18 @@
-import { CATEGORIES } from '@/constants'
+import { CATEGORYTITLES } from '@/constants'
 import FilterRow from './FilterRow'
 import UserRow from './UserRow'
 import { useUsers } from '@hooks/useUsers'
 
 export default function UserTable() {
-	const { users } = useUsers()
+	const { users, categoryFilters } = useUsers()
+	console.log(categoryFilters)
 
 	return (
 		<table>
 			<thead>
 				<FilterRow />
 				<tr>
-					{CATEGORIES.map((category) => (
+					{CATEGORYTITLES.map((category) => (
 						<th key={category}>{category}</th>
 					))}
 				</tr>

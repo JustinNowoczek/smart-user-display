@@ -1,9 +1,9 @@
-import { CATEGORIES } from '@/constants'
+import { CATEGORYTITLES } from '@/constants'
 
 export default function FilterRow() {
 	return (
 		<tr>
-			{CATEGORIES.map((category) => (
+			{CATEGORYTITLES.map((category) => (
 				<td key={category}>
 					<input type="text" />
 				</td>

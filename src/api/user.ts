@@ -1,3 +1,4 @@
+import { CATEGORIES } from '@/constants'
 import { UserType } from '@custom-types/userTypes'
 
 export default async function fetchAllUsers() {
@@ -10,13 +11,19 @@ export default async function fetchAllUsers() {
 
 		const users = (await response.json()) as UserType[]
 
-		return users.map(({ id, email, name, phone, username }) => ({
-			id,
-			email,
-			name,
-			phone,
-			username,
-		}))
+		return users.map((user) => {
+			const newUser = { id: user.id } as UserType
+
+			CATEGORIES.forEach((category) => {
+				if (user[category] === undefined) {
+					console.warn('Users do not have the property: ' + category)
+				} else {
+					newUser[category] = user[category]
+				}
+			})
+
+			return newUser
+		})
 	} catch {
 		console.error('fetching users failed')
 		return []

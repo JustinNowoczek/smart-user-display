@@ -7,14 +7,14 @@ import { useCallback } from 'react'
 
 export const useUsers = () => {
 	const dispatch: AppDispatch = useDispatch()
-	const users = useSelector((state: RootState) => state.user.users)
+	const usersStore = useSelector((state: RootState) => state.user)
 
 	const initializeUsers = useCallback(async () => {
 		dispatch(setUsers(await fetchAllUsers()))
 	}, [dispatch])
 
 	return {
-		users,
+		...usersStore,
 		initializeUsers,
 	}
 }
