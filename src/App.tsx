@@ -1,7 +1,7 @@
 import './styles/reset.css'
 import './styles/global.css'
 
-import UserTable from '@components/UserTable'
+import UserTable from '@components/UserTable/UserTable'
 import { useEffect } from 'react'
 import { useUsers } from '@hooks/useUsers'
 
@@ -12,11 +12,7 @@ function App() {
 		initializeUsers()
 	}, [initializeUsers])
 
-	return (
-		<>
-			<UserTable />
-		</>
-	)
+	return <UserTable />
 }
 
 export default App

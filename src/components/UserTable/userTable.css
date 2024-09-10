@@ -1,0 +1,81 @@
+.userTable {
+	display: block;
+	border-right: 10px solid var(--main);
+	border-left: 10px solid var(--main);
+	border-radius: 10px;
+	max-width: 95%;
+	height: fit-content;
+	overflow: scroll;
+
+	thead,
+	tbody {
+		width: 100%;
+	}
+
+	thead {
+		border-bottom: 2px solid var(--main);
+
+		tr {
+			height: 32px;
+		}
+	}
+
+	.filterRow {
+		input {
+			all: unset;
+			border: 2px solid var(--base);
+			border-radius: 10px;
+			height: 32px;
+			color: var(--main);
+
+			&::placeholder {
+				color: var(--subtext);
+			}
+
+			&:hover {
+				color: var(--text);
+
+				&::placeholder {
+					color: var(--text);
+				}
+			}
+		}
+	}
+
+	tbody {
+		tr {
+			transition: all 0.5s, scale 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+			&:hover {
+				scale: 0.99 1;
+				opacity: 0.3;
+				background-color: var(--main) !important;
+			}
+		}
+
+		tr:nth-of-type(2n - 1) {
+			background-color: var(--base);
+		}
+		tr:nth-of-type(2n) {
+			background-color: var(--mantle);
+		}
+	}
+
+	.noResults {
+		padding: 50px;
+		width: 100%;
+		text-align: center;
+	}
+
+	td {
+		text-wrap: nowrap;
+		padding: 10px;
+		height: 1px;
+		text-align: center;
+
+		span {
+			background-color: var(--main);
+		}
+	}
+}
+

@@ -5,10 +5,13 @@ export default function FilterRow() {
 	const { categoryFilters, dispatchNewCategoryFilter } = useUsers()
 
 	return (
-		<tr>
+		<tr className="filterRow">
 			{CATEGORIES.map((category) => (
 				<td key={category}>
 					<input
+						onDoubleClick={() => {
+							dispatchNewCategoryFilter(category, '')
+						}}
 						value={categoryFilters[category]}
 						onChange={({ currentTarget }) => {
 							dispatchNewCategoryFilter(category, currentTarget.value)
