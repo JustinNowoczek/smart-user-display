@@ -1,4 +1,5 @@
 Steps taken to complete the task:
+
 Since the task involved using React, I began by initializing a new React project with Vite, integrating TypeScript from the start.
 
 I first referred to the JSONPlaceholder guide to understand the API I would be working with. From there, I created a basic function to fetch all the users, stripping away unnecessary properties and creating a type that fit the user objects I needed.
