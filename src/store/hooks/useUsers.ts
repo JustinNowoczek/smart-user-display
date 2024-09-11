@@ -1,5 +1,5 @@
-import { AppDispatch, RootState } from '@/store'
-import { initializeUsers, setCategoryFilter } from '@/slices/userSlice'
+import { AppDispatch, RootState } from '@store/store'
+import { initializeUsers, setCategoryFilter } from '@store/slices/userSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { CATEGORIES } from '@/constants'

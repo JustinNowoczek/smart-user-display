@@ -4,7 +4,7 @@ import { CATEGORIES, CATEGORYTITLES } from '@/constants'
 
 import FilterRow from './components/FilterRow/FilterRow'
 import UserRow from './components/UserRow/UserRow'
-import { useUsers } from '@hooks/useUsers'
+import { useUsers } from '@store/hooks/useUsers'
 
 export default function UserTable() {
 	const { displayUsers, dispatchNewCategoryFilter, status } = useUsers()

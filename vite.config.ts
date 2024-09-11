@@ -7,7 +7,7 @@ export default defineConfig({
 	plugins: [react()],
 	resolve: {
 		alias: {
-			'@hooks': resolve(__dirname, 'src/hooks'),
+			'@store': resolve(__dirname, 'src/store'),
 			'@components': resolve(__dirname, 'src/components'),
 			'@custom-types': resolve(__dirname, 'src/types'),
 			'@': resolve(__dirname, 'src'),

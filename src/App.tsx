@@ -3,7 +3,7 @@ import './styles/global.css'
 
 import UserTable from '@components/UserTable/UserTable'
 import { useEffect } from 'react'
-import { useUsers } from '@hooks/useUsers'
+import { useUsers } from '@store/hooks/useUsers'
 
 function App() {
 	const { dispatchInitializeUsers } = useUsers()

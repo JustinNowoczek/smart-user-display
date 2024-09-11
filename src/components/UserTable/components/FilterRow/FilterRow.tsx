@@ -1,5 +1,5 @@
 import { CATEGORIES } from '@/constants'
-import { useUsers } from '@hooks/useUsers'
+import { useUsers } from '@store/hooks/useUsers'
 
 export default function FilterRow() {
 	const { categoryFilters, dispatchNewCategoryFilter } = useUsers()

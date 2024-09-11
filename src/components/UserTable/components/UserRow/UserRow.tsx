@@ -1,6 +1,6 @@
 import { CATEGORIES } from '@/constants'
 import { UserType } from '@custom-types/userTypes'
-import { useUsers } from '@hooks/useUsers'
+import { useUsers } from '@store/hooks/useUsers'
 
 export default function UserRow(user: UserType) {
 	const { categoryFilters } = useUsers()
