@@ -1,5 +1,6 @@
 .userTable {
 	display: block;
+	margin-top: 40px;
 	border-right: 10px solid var(--main);
 	border-left: 10px solid var(--main);
 	border-radius: 10px;
