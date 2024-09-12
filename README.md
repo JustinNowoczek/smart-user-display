@@ -1,17 +1,50 @@
-Steps taken to complete the task:
+## [Preview Deployment](https://smartuserdisplay.netlify.app/)
 
-Since the task involved using React, I began by initializing a new React project with Vite, integrating TypeScript from the start.
+## Steps Taken to Complete the Task
 
-I first referred to the JSONPlaceholder guide to understand the API I would be working with. From there, I created a basic function to fetch all the users, stripping away unnecessary properties and creating a type that fit the user objects I needed.
+1. **Initialize Project**:
 
-Once I was successfully pulling the data, I set up the Redux store and added a custom hook to access the data. I ensured that the users were fetched when the app component mounted.
+   - Initialized a new React project using Vite.
+   - Integrated TypeScript from the start.
 
-Next, I created a basic table component to display the list of users. Since the data was being pulled directly from the store, this table could be easily added anywhere in the app. At this point, I focused on functionality and left styling for later.
+2. **API Integration**:
 
-I then split the table so that each user row had its own component, and added a separate component for the row of filters. I included the filters inside the table to simplify aligning the columns later.
+   - Referenced the JSONPlaceholder guide to understand the API.
+   - Created a function to fetch all users.
+   - Stripped away unnecessary properties and created a type to fit the required user objects.
 
-Instead of displaying all the users, I added a filtered array to the store. This array updates whenever any value in the filters object (which I also added) changes, completing the app's core functionality. I also derived all categories from a single array, so updating the headers could be managed from one place.
+3. **State Management**:
 
-I then applied basic styles to highlight the row being hovered, separate different sections of the table, and visually link each field to its corresponding filter.
+   - Set up the Redux store.
+   - Added a custom hook to access the data.
+   - Ensured users were fetched when the app component mounted.
 
-Finally, I refactored the data-fetching process by implementing an async thunk, allowing the app to display a loading indicator while fetching data and show an error message in case of failure.
+4. **Table Component**:
+
+   - Created a basic table component to display the list of users.
+   - Pulled data directly from the store, allowing the table to be easily added anywhere in the app.
+   - Focused on functionality, leaving styling for later.
+
+5. **Component Structuring**:
+
+   - Split the table into separate components for each user row.
+   - Added a separate component for the row of filters.
+   - Included filters inside the table to simplify aligning the columns later.
+
+6. **Filtering Functionality**:
+
+   - Implemented a filtered array in the store to manage filtered data.
+   - Updated the filtered array whenever any value in the filters object changed.
+   - Derived all categories from a single array to manage header updates from one place.
+
+7. **Styling**:
+
+   - Applied basic styles to:
+     - Highlight the row being hovered.
+     - Separate different sections of the table.
+     - Visually link each field to its corresponding filter.
+
+8. **Refactor Data Fetching**:
+   - Refactored the data-fetching process by implementing an async thunk.
+   - Added functionality to display a loading indicator while fetching data.
+   - Implemented error handling to show an error message in case of failure.
